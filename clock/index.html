@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div id="calendar">
+        <h2>Calender Date</h2>
+        <div id="date">
+            <div><span id="day">00</span><span>Day</span></div>
+            <div><span id="month">00</span><span>Month</span></div>
+            <div><span id="year">00</span><span>Year</span></div>
+        </div>
+    </div>
+    <div id="clock">
+        <h2>The Time</h2>
+        <div id="time">
+            <div><span id="hour">00</span><span>Hours</span></div>
+            <div><span id="minute">00</span><span>Minutes</span></div>
+            <div><span id="second">00</span><span>Second</span></div>
+        </div>
+    </div>
+    <script>
+        function clock() {
+            var hour = document.getElementById('hour');
+            var minute = document.getElementById('minute');
+            var second = document.getElementById('second');
+
+            var hr = new Date().getHours();
+            var mn = new Date().getMinutes();
+            var sc = new Date().getSeconds();
+
+            hour.innerHTML = hr;
+            minute.innerHTML = mn;
+            second.innerHTML = sc;
+        }
+
+        function getDate() {
+            var day = document.getElementById('day');
+            var month = document.getElementById('month');
+            var year = document.getElementById('year');
+
+            var d = new Date().getDate();
+            var m = new Date().getMonth() + 1;
+            var y = new Date().getFullYear();
+
+            day.innerHTML = d;
+            month.innerHTML = m;
+            year.innerHTML = y % 2000;
+        }
+        setInterval(clock, 1000);
+        getDate();
+    </script>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
